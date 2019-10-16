@@ -1,0 +1,11 @@
+<%# Able to see a single student and all the ducks owned by that student %>
+
+<h1><%= @student.name %> </h1>
+
+<ul>
+    <% @student.ducks.each do |duck| %>
+    <li>
+        <%= duck.name %>
+    </li>
+    <% end %>
+</ul>

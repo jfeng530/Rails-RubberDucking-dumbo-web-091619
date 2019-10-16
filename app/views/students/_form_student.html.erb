@@ -1,0 +1,33 @@
+<div class="container">
+<div class="form-group">
+<%= form_for @student do |f| %>
+
+    <% if @student.errors.any? %>
+    <% @student.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+  
+  <%= f.label :name, "Name:" %><br>
+  <%= f.text_field :name, minlength: 1, :class => "form-control form-control-success"%><br>
+  <%= f.label :mod, "Mod:" %><br>
+  <%= f.number_field :mod, min: 1, max: 5, :class => "form-contorl "%><br>
+  <small class="text-muted">Must be 1-5 numbers long</small><br>
+
+  <%= f.submit ({:class => "btn btn-danger"}) %>
+<% end %>
+</div>
+</div>
+<%# 
+<div class="col-xs-4">
+        <label for="ex3">col-xs-4</label>
+        <input class="form-control" id="ex3" type="text">
+</div> %>
+
+<%# <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">First and last name</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control">
+  <input type="text" aria-label="Last name" class="form-control">
+</div> %>
